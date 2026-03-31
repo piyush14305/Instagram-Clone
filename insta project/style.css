@@ -1,0 +1,583 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
+}
+html,body{
+  width:100%;
+  height:100%;
+
+}
+
+.page{
+ width: 100%;
+  height: 100vh; 
+  background-color: #fafafa; 
+  position: relative;
+}
+.screen{
+  width: min(450px,100vw);
+  height:100vh;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top:50%;
+  left:50%;
+  transform: translate(-50%,-50%);
+  border:3px solid black;
+  border-radius: 10px;
+
+}
+.story-profile-section{
+  width: 100%;
+  height:100%;
+  position: absolute;
+  top:0%;
+  left:0%;
+  transform: translate(0,0);
+  z-index:5;
+  display: none;
+  border:20px;
+}
+.story-dp{
+  background-color: black;
+  width:100%;
+  height:13%;
+  position: relative;
+}
+
+.story-profile{
+  width: 100%;
+  height:76%;
+
+  position: relative;
+}
+
+.story-profile img{
+  width:100%;
+  height:100%;
+  object-fit: cover;
+  object-position: center;
+}
+.story-option{
+  background-color: black;
+  width:100%;
+  height:11%;
+  position: relative;
+  color:white;
+  display: flex;
+  justify-content: space-between;
+  /* align-items: center; */
+}
+.dp{
+  width:70px;
+  height:70px;
+  border-radius: 50%;
+  background-color: white;
+  border:2px solid rgb(198, 50, 221);
+  position: absolute;
+  top:15%;
+  left:5%;
+}
+.dp img{
+  width:100%;
+  height:100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 50%;
+}
+
+.story-option input{
+  margin-top:20px;
+  margin-left: 10px;
+  width:200px;
+  height:35px;
+  text-align:left;
+  color: white;
+  font-size:16px;
+  padding-left:20px; 
+  font-weight: 300;
+  background-color: black;
+  border:1.6px dashed white;
+  border-radius:20px;
+}
+.story-option input {
+  outline: none; /* yeh add karo */
+}
+.option1{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-right:20px;
+}
+.option1 i{
+  font-size: 24px;
+  color: rgb(28, 115, 181);
+}
+#heart{
+  color: white;
+}
+.add-sign{
+  width:100%;
+  height: 30px;
+  display: flex;
+  justify-content: space-between;
+  padding:5px;
+  margin-bottom:5px;
+}
+.add-sign i{
+  font-size: 24px;
+}
+h3{
+  font-family: 'Pacifico', cursive;
+  font-size:20px;
+  font-weight:400;
+  position: relative;
+  top:-10px;
+  cursor: default;
+}
+.storys{
+  width: 100%;
+  height:140px;
+  background-color: white;
+  padding-left:10px;
+  padding-right:10px;
+  display:flex;
+  gap: 20px;
+  position: relative;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-behavior: smooth;
+  border-bottom:1px solid rgb(170, 168, 168) ;
+}
+.storys::-webkit-scrollbar{
+  display: block;
+}
+
+.story{
+  margin-top:3px;
+  width: 80px;
+  height:80px;
+  border-radius:50%;
+  background-color:white;
+  border:3px solid rgb(211, 28, 171);
+  flex-shrink: 0;
+}
+
+.story p{
+  width:60px;
+  height:10px;
+  color:black;
+  font-size:16px;
+  text-align: center;
+  padding:1px;
+  padding-left: 5px;
+}
+.story img{
+  width:100%;
+  height:100%;
+  object-fit: cover;
+  border-radius: 50%;
+  padding:3px;
+}
+
+
+/* hero section */
+
+.hero{
+  width:100%;
+  height:92%;
+  background-color:white;
+  overflow-x: hidden;
+  opacity:1;
+  display: flex;
+  flex-direction: column;
+  border-radius:0 0 10px 10px;
+}
+.hero-story-section{
+  width:100%;
+  height:92%;
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+.hero-story-section::-webkit-scrollbar {
+    display: none;
+}
+.hero-story{
+  width:100%;
+  height:auto;
+  background-color:white;
+  font-size: 16px;
+  flex-shrink:0;
+  margin-bottom:5px;
+  padding-top: 10px;
+}
+.hero-story-img{
+  width:100%;
+  height:450px;
+  overflow: hidden;
+  background-color: white;
+  position: relative;
+}
+.db-hero-story{
+  font-size:60px;
+  position: absolute;
+  top:50%;
+  left:50%;
+  transform: translate(-50%,-50%);
+  color: rgb(209, 34, 183);
+   transition: opacity 0.3s ease-in-out;
+  display: none;
+  opacity:0;
+  pointer-events: none;
+}
+.db-hero-story.active {
+    transform: translate(-50%, -50%) scale(1.5); /* Bada ho kar bahar aayega */
+    opacity: 1;
+}
+
+
+.hero-story-img img{
+  width:100%;
+  height:100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.hero-story-intro{
+  width:100%;
+  height:13%;
+  background-color:white;
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 10px;
+}
+.intro1{
+  width: 300px;
+  height:100%;
+  display: flex;
+  padding-top:5px;
+  padding-left:8px;
+  cursor: pointer;
+}
+
+.hero-story-dp{
+  width: 50px;
+  height: 50px;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  padding-bottom:5px;
+}
+.hero-story-dp img{
+  width:100%;
+  height:100%;
+  object-fit: cover;
+  padding:3px 3px;
+  border-radius: 50%;
+  object-position: center; 
+  border:3px solid rgb(215, 55, 164);
+}
+.hero-story-name{
+  width:100px;
+  height:100%;
+  margin-left:9px;
+  margin-top: 5px;
+  font-size:14px;
+  text-align: start;
+}
+
+.intro2{
+  width:60px;
+  height:60px;
+  display: flex;
+  justify-content: center;
+  align-items:center;
+  font-size: 20px;
+  font-weight: 10;
+  cursor: pointer;
+}
+
+.hero-story-like-section{
+  width:100%;
+  height:auto;
+  background-color:white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-between;
+  margin-top:20px;
+  padding-left:10px;
+  padding-right:10px;
+  flex-wrap: wrap;
+  cursor: pointer;
+}
+.hero-story-like-section i{
+  text-align: start;
+}
+.like-section-1{
+  width:70%;
+  height:100%;
+  display: flex;
+  justify-content: space-between;
+  font-size: 26px;
+  padding-left:10px;
+}
+.like-section-1 i{
+  width:20%;
+
+}
+.hero-heart{
+  color: grey;
+}
+.hero-share{
+  color: rgb(7, 117, 181);
+}
+.hero-repost{
+  position: relative;
+  font-weight: -10;
+  transform: rotate(0deg);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  cursor: pointer;
+  display: inline-block;
+}
+.hero-repost-icon{
+  display:none;
+  position: absolute;
+  top: 20%;
+  left: 10%;
+  /* transform: translate(-50%,-50%); */
+  font-size: 12px;
+}
+.like-section-2{
+  height:100%;
+  font-size: 26px;
+  color: grey;
+}
+
+.like-section-disc{
+  width:100%;
+  height: 35px;
+  color: black;
+  font-size: 16px;
+  margin-top:10px;
+  text-align: start;
+  font-weight:400;
+  margin-bottom:5px;
+}
+
+.hero-bottom {
+  width: min(450px,100vw);
+  height:55px;  
+  background-color: white;
+  color:black;
+  z-index:7;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size:26px;
+  padding:0px 10px;
+  position: fixed;
+  bottom: 0%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 0 0 10px 10px; 
+  border-top: 2px white solid;
+}
+.hero-bottom i{
+  cursor: pointer;
+  padding:5px 0px;
+  overflow: hidden;
+}
+
+.footer-profile{
+  height:35px;
+  width:35px;
+  background-color:grey;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items:center ;
+  cursor: pointer;
+}
+.footer-profile img{
+  width:100%;
+  height: 100%;
+  object-fit: cover;
+  object-position:center;
+  border-radius: 50%;
+}
+
+
+/* video-section-css */
+
+.video-page{
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(450px, 100vw);
+  height:calc(100vh - 55px);
+  border:3px solid black;
+  opacity:0;
+  background-color: black;
+  z-index:6;
+  display: none;
+  flex-direction: column;
+   overflow-y: scroll;
+  scroll-snap-type:y mandatory;
+   -webkit-overflow-scrolling: touch; 
+  
+}
+.video-page::-webkit-scrollbar {
+  display: none;
+}
+.video{
+  width:100%;
+  height:calc(100vh - 55px);
+  background-color:black;
+  flex-shrink:0;
+  scroll-snap-align:start;
+  scroll-snap-stop:always;
+   position: relative;
+}
+.vid{
+  width:100%;
+  height:100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.reel-dp-section{
+  width:60%;
+  height:55px;
+  z-index:10;
+  display: flex;
+  transform: translate(1%);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  top:90%;
+  left:0%;
+}
+
+.reel-dp{
+  width:100%;
+  height: 100%;
+  display: flex;
+  align-items:center;
+  padding-left:20px;
+  gap:5px;
+}
+
+.reel-dp img{
+  width:40px;
+  height: 40px;
+  border-radius:50%;
+  object-fit: cover;
+  object-position: center;
+  border:1px solid white;
+}
+.reel-dp-name {
+  width: 60px;
+  text-align:start;
+  font-size: 16px;
+  color: white;
+  z-index: 10;
+  font-weight: 100;
+  padding-top: 3px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.follow-btn{
+  width: 150px;
+  height:30px;
+  border:0.5px solid white;
+  color:white;
+  font-size:20px;
+  letter-spacing:1px;
+  border-radius: 8px;
+  font-size: 14px;
+  background: transparent
+}
+
+.reel-option{
+  width:35px;
+  height:auto;
+  position: absolute;
+  top:52%;
+  left:90%;
+  background-color: blue;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  color: white;
+  font-size: 28px;
+  background: transparent;
+}
+.reel-option i{
+  z-index:10;
+  -webkit-text-stroke: 0.1px black;
+  filter: drop-shadow(0px 1px 4px rgba(0,0,0,0.9));
+  cursor: pointer;
+}
+.reel-music{
+  width:28px;
+  height: 28px;
+  background-color:red;
+}
+
+.reel-heart {
+  font-size: 32px;
+  color: white;
+  cursor: pointer;
+  transition: transform 0.2s, color 0.2s;
+}
+
+.reel-heart.liked {
+  color: red;
+  transform: scale(1.1);
+}
+.reel-save {
+  font-size: 32px;
+  color:white;
+  cursor: pointer;
+  transition: transform 0.2s, color 0.2s;
+}
+
+.reel-save.clicked {
+  color: white;
+  transform: scale(1);
+}
+.reel-dbl {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  font-size: 80px;
+  color: red;
+  opacity: 0;
+  z-index: 10;
+  pointer-events: none;
+  animation: none;
+}
+
+.reel-dbl.animate {
+  display: block;
+  animation: heartPop 0.8s ease forwards;
+}
+@keyframes heartPop {
+  0%   { transform: translate(-50%, -50%) scale(0); opacity: 0; }
+  40%  { transform: translate(-50%, -50%) scale(1.4); opacity: 1; }
+  60%  { transform: translate(-50%, -50%) scale(1.1); opacity: 1; }
+  80%  { transform: translate(-50%, -50%) scale(1.2); opacity: 1; }
+  100% { transform: translate(-50%, -50%) scale(1);   opacity: 0; }
+}
